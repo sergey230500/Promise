@@ -1,17 +1,3 @@
-function sieve(n) {
-  let map = {1: true};
-  let primes = [];
-  for (let i = 2; i <= n; i++) {
-    if (i in map) {
-      delete map[i];
-    } else {
-      primes.push(i);
-      for (let j = i; j <= n; j += i) map[j] = true;
-    }
-  }
-  return primes;
-}
-
 function PrimeFinder(n) {
   this.n = n;
   this.map = {};
@@ -53,8 +39,8 @@ PrimeFinder.prototype = {
     let self = this;
     return new Promise(function (resolve, reject) {
       setTimeout(function step() {
-        if (self.continue(5000)) resolve(self.primes);
-        else setTimeout(step, 1);
+        if (self.continue(20000)) resolve(self.primes);
+        else setTimeout(step, 0);
       }, 0);
     });
   }

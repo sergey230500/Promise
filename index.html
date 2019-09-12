@@ -4,14 +4,19 @@
   <title>Вычисление простых чисел</title>
   <link rel="stylesheet" href="styles.css"/>
   <script src="script.js" type="text/javascript" defer></script>
+  <script src="ui.js" type="text/javascript" defer></script>
 </head>
 <body>
-	<div class="container">
-		<label for="userTime">Прошедшее время</label>
-		<button id="show">Поехали...</button>
-		<div>	
-			<input type="checkbox" id=”one”>
-		</div>
-	</div>
+<div class="container">
+  <label>
+    <input type="checkbox" id=”async” checked/>
+    С промисом
+  </label>
+  <button id="compute">Поехали...</button>
+  <div>
+    <progress min="0" max="50000000" id="progress" value="0"></progress>
+    <div id="output"></div>
+  </div>
+</div>
 </body>
 </html>
